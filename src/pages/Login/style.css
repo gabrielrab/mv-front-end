@@ -1,0 +1,17 @@
+.container-login{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-login form{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-login form input{
+    margin: 7px 0px;
+}
