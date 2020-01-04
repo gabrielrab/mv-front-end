@@ -16,12 +16,14 @@ export default function Login({ history }) {
     formData.append("user", values["user"]);
     formData.append("password", values["password"]);
 
+    // eslint-disable-next-line
     const response = await api
       .post("/auth", {
         user: values["user"],
         password: values["password"]
       })
       .then(res => {
+        window.localStorage.setItem("TOKEN", res.data.token);
         setMessage("");
         history.push("/");
       })
