@@ -9,7 +9,6 @@ const useForm = callback => {
 
     auxValues[event.target.name] = event.target.value;
     setValues(auxValues);
-    console.log(auxValues);
   };
 
   const handleSubmit = callback => async event => {
