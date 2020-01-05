@@ -1,14 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Grommet, Box, Heading, Button, TextInput, Text } from "grommet";
 import { grommet } from "grommet/themes";
 
 import "./style.css";
 import useForm from "../../hooks/useForm";
 import api from "../../services/api";
+import { AccountContext } from "../../services/context";
 
 export default function Login({ history }) {
+  const { user, setUser } = useContext(AccountContext);
   const [{ values }, handleChange, handleSubmit] = useForm();
   const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    const token = window.localStorage.getItem("TOKEN");
+    if (token !== null && token !== "undefined") {
+      history.push("/");
+    }
+  });
 
   const login = async () => {
     //login
@@ -22,8 +31,9 @@ export default function Login({ history }) {
         user: values["user"],
         password: values["password"]
       })
-      .then(res => {
-        window.localStorage.setItem("TOKEN", res.data.token);
+      .then(async res => {
+        await window.localStorage.setItem("TOKEN", res.data.token);
+        setUser(res.data);
         setMessage("");
         history.push("/");
       })
