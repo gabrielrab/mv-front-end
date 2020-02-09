@@ -1,0 +1,12 @@
+.form-order{
+    background-color: white;
+    padding: 20px;
+    margin: 10px;
+    width: 500px;
+    border-radius: 5px;
+}
+
+.inline-form{
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,20 @@
+.input-field{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    border-bottom: 5px;
+}
+label{
+    font-weight: bold;
+}
+select{
+    width: 100%;
+    border: 1px solid #ddd;
+    height: 40px;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 15px;
+    margin: 3px;
+    background-color: transparent;
+}
