@@ -15,7 +15,12 @@ export default function Index({ history }) {
         <Box pad="medium" className="container-login">
           <Heading level="2">{user.name}, crie um novo pedido</Heading>
           <Form className="form-order">
-            <Input name="width" type="number" label="Altura:" />
+            <Input
+              name="width"
+              type="number"
+              label="Altura:"
+              onChange={e => console.log(e.target.name, e.target.value)}
+            />
             <Input name="height" type="number" label="Largura:" />
             <Select name="glass_type" label="Tipo do vidro:">
               <option hidden></option>
