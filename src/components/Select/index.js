@@ -5,7 +5,9 @@ export default function(props) {
   return (
     <div className="input-field">
       <label>{props.label}</label>
-      <select name={props.name}>{props.children}</select>
+      <select name={props.name} onChange={props.onChange}>
+        {props.children}
+      </select>
     </div>
   );
 }
