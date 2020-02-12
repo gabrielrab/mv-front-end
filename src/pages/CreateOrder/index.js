@@ -1,8 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Grommet, Box, Heading, Button, Form, CheckBox } from "grommet";
 import { grommet } from "grommet/themes";
-import Input from "../../components/Input";
-import Select from "../../components/Select";
+import { Select, Input } from "../../components";
 import "./styles.css";
 import { AccountContext } from "../../services/context";
 
